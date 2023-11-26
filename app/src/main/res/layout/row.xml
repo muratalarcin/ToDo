@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardViewRow"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:id="@+id/twBaslik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="İlk Görevim"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageViewSil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="8dp"
+            app:srcCompat="@android:drawable/ic_delete" />
+
+        <TextView
+            android:id="@+id/twGorev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="start"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text="Sabah kalk, bankaya gir, para çek. Borçlerını öde. Çık markete git alışveriş yap." />
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
