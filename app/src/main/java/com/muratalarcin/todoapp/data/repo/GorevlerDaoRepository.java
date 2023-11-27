@@ -49,8 +49,8 @@ public class GorevlerDaoRepository {
 
     }
 
-    public void guncelle(int gorevId, String gorevBaslik, String gorevDetay) {
-        Gorevler guncellenenGorev = new Gorevler(gorevId, gorevBaslik, gorevDetay);
+    public void guncelle(int gorev_id, String gorev_baslik, String gorev_detay) {
+        Gorevler guncellenenGorev = new Gorevler(gorev_id, gorev_baslik, gorev_detay);
         gdao.guncelle(guncellenenGorev).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() {
@@ -71,8 +71,8 @@ public class GorevlerDaoRepository {
                 });
     }
 
-    public void kaydet(String gorevBaslik, String gorevDetay) {
-        Gorevler yeniGorev = new Gorevler(0, gorevBaslik, gorevDetay);
+    public void kaydet(String gorev_baslik, String gorev_detay) {
+        Gorevler yeniGorev = new Gorevler(0, gorev_baslik, gorev_detay);
         gdao.kaydet(yeniGorev).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() {
@@ -93,11 +93,46 @@ public class GorevlerDaoRepository {
                 });
     }
 
-    public void sil(int gorevId) {
+    public void sil(int gorev_id) {
+        Gorevler silinenGorev = new Gorevler(gorev_id, "", "");
+        gdao.sil(silinenGorev).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        gorevleriYukle();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
     }
 
     public void ara(String aramaKelimesi) {
+        gdao.ara(aramaKelimesi).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleObserver<List<Gorevler>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
+                    }
+
+                    @Override
+                    public void onSuccess(List<Gorevler> gorevlers) {
+                        gorevlerListesi.setValue(gorevlers);
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
     }
 }

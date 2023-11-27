@@ -36,6 +36,7 @@ public class DetaySayfaFragment extends Fragment {
         binding.buttonGuncelle.setOnClickListener(view -> {
             String gorev_baslik = binding.detayBaslik.getText().toString();
             String gorev_detay = binding.detayGorev.getText().toString();
+
             viewModel.guncelle(gelenGorev.getGorev_id(), gorev_baslik, gorev_detay);
         });
 

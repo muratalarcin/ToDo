@@ -1,6 +1,7 @@
 package com.muratalarcin.todoapp.room;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -22,4 +23,10 @@ public interface GorevlerDao {
 
     @Update
     Completable guncelle(Gorevler gorev);
+
+    @Delete
+    Completable sil(Gorevler gorev);
+
+    @Query("SELECT * FROM gorevler WHERE gorev_baslik like '%' || :aramaKelimesi || '%'")
+    Single<List<Gorevler>> ara(String aramaKelimesi);
 }

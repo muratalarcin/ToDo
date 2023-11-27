@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -55,11 +56,11 @@ public class GorevlerAdapter extends RecyclerView.Adapter<GorevlerAdapter.RowHol
 
         t.cardViewRow.setOnClickListener(view -> {
             AnasayfaFragmentDirections.DetayGecis gecis = AnasayfaFragmentDirections.detayGecis(gorev);
-            Navigation.findNavController(view).navigate(gecis);
+            Navigation.findNavController(view).navigate((NavDirections) gecis);
         });
 
         t.imageViewSil.setOnClickListener(view -> {
-            Snackbar.make(view, "Silinsin mi?", Snackbar.LENGTH_SHORT)
+            Snackbar.make(view, gorev.getGorev_baslik() + "Silinsin mi?", Snackbar.LENGTH_SHORT)
                     .setAction("EVET", view1 -> {
                         viewModel.sil(gorev.getGorev_id());
                     })
