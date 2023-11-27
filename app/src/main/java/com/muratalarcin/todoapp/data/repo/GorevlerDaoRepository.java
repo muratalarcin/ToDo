@@ -28,4 +28,12 @@ public class GorevlerDaoRepository {
     public void kaydet(String gorevBaslik, String gorevDetay) {
         Log.e("Kaydet", gorevBaslik);
     }
+
+    public void sil(int gorevId) {
+
+    }
+
+    public void ara(String aramaKelimesi) {
+
+    }
 }

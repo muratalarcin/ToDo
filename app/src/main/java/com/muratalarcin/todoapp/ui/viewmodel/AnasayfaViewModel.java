@@ -22,4 +22,11 @@ public class AnasayfaViewModel extends ViewModel {
         grepo.gorevleriYukle();
     }
 
+    public void sil(int gorevId) {
+        grepo.sil(gorevId);
+    }
+
+    public void ara(String aramaKelimesi) {
+        grepo.ara(aramaKelimesi);
+    }
 }

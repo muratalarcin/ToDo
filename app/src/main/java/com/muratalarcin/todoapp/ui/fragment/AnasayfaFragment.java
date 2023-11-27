@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import com.muratalarcin.todoapp.R;
 import com.muratalarcin.todoapp.databinding.FragmentAnasayfaBinding;
@@ -34,6 +35,21 @@ public class AnasayfaFragment extends Fragment {
 
         binding.fabButton.setOnClickListener(view -> {
             Navigation.findNavController(view).navigate(R.id.kayit_gecis);
+        });
+
+        binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                viewModel.ara(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {//harf girdikçe veya sildikçe çalışır
+                viewModel.ara(newText);
+                return true;
+            }
         });
 
 
