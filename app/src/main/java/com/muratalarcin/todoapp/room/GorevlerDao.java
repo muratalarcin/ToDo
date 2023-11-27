@@ -1,4 +1,16 @@
 package com.muratalarcin.todoapp.room;
 
-public class GorevlerDao {
+import androidx.room.Dao;
+import androidx.room.Query;
+
+import com.muratalarcin.todoapp.data.entity.Gorevler;
+
+import java.util.List;
+
+import io.reactivex.Single;
+
+@Dao
+public interface GorevlerDao {
+    @Query("SELECT * FROM gorevler")
+    Single<List<Gorevler>> gorevleriYukle();
 }
