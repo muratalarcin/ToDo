@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import io.reactivex.CompletableObserver;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -49,11 +50,47 @@ public class GorevlerDaoRepository {
     }
 
     public void guncelle(int gorevId, String gorevBaslik, String gorevDetay) {
-        Log.e("güncelleme şekli", gorevBaslik);
+        Gorevler guncellenenGorev = new Gorevler(gorevId, gorevBaslik, gorevDetay);
+        gdao.guncelle(guncellenenGorev).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
     }
 
     public void kaydet(String gorevBaslik, String gorevDetay) {
-        Log.e("Kaydet", gorevBaslik);
+        Gorevler yeniGorev = new Gorevler(0, gorevBaslik, gorevDetay);
+        gdao.kaydet(yeniGorev).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+                });
     }
 
     public void sil(int gorevId) {
