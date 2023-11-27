@@ -1,5 +1,7 @@
 package com.muratalarcin.todoapp.data.repo;
 
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
 import com.muratalarcin.todoapp.data.entity.Gorevler;
@@ -19,4 +21,7 @@ public class GorevlerDaoRepository {
         gorevlerListesi.setValue(liste);
     }
 
+    public void guncelle(int gorevId, String gorevBaslik, String gorevDetay) {
+        Log.e("güncelleme şekli", gorevBaslik);
+    }
 }

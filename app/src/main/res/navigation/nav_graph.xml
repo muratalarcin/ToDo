@@ -9,5 +9,26 @@
         android:id="@+id/anasayfaFragment"
         android:name="com.muratalarcin.todoapp.ui.fragment.AnasayfaFragment"
         android:label="fragment_anasayfa"
-        tools:layout="@layout/fragment_anasayfa" />
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/detay_gecis"
+            app:destination="@id/detaySayfaFragment" />
+        <action
+            android:id="@+id/kayit_gecis"
+            app:destination="@id/kayitSayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detaySayfaFragment"
+        android:name="com.muratalarcin.todoapp.ui.fragment.DetaySayfaFragment"
+        android:label="fragment_detay_sayfa"
+        tools:layout="@layout/fragment_detay_sayfa" >
+        <argument
+            android:name="gorev"
+            app:argType="com.muratalarcin.todoapp.data.entity.Gorevler" />
+    </fragment>
+    <fragment
+        android:id="@+id/kayitSayfaFragment"
+        android:name="com.muratalarcin.todoapp.ui.fragment.KayitSayfaFragment"
+        android:label="fragment_kayit_sayfa"
+        tools:layout="@layout/fragment_kayit_sayfa" />
 </navigation>

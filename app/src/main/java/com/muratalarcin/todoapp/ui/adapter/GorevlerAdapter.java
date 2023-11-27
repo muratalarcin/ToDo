@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.muratalarcin.todoapp.R;
 import com.muratalarcin.todoapp.data.entity.Gorevler;
 import com.muratalarcin.todoapp.databinding.RowBinding;
+import com.muratalarcin.todoapp.ui.fragment.AnasayfaFragmentDirections;
 import com.muratalarcin.todoapp.ui.viewmodel.AnasayfaViewModel;
 
 import java.util.List;
@@ -48,6 +51,11 @@ public class GorevlerAdapter extends RecyclerView.Adapter<GorevlerAdapter.RowHol
 
         t.twBaslik.setText(gorev.getGorev_baslik());
         t.twGorev.setText(gorev.getGorev_detay());
+
+        t.cardViewRow.setOnClickListener(view -> {
+            AnasayfaFragmentDirections.DetayGecis gecis = AnasayfaFragmentDirections.detayGecis(gorev);
+            Navigation.findNavController(view).navigate(gecis);
+        });
 
     }
 
