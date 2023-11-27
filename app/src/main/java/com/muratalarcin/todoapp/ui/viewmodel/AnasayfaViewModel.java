@@ -8,14 +8,20 @@ import com.muratalarcin.todoapp.data.repo.GorevlerDaoRepository;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.lifecycle.HiltViewModel;
+
+@HiltViewModel
 public class AnasayfaViewModel extends ViewModel {
-    public GorevlerDaoRepository grepo = new GorevlerDaoRepository();
+    public GorevlerDaoRepository grepo;
     public MutableLiveData<List<Gorevler>> gorevlerListesi;
 
-    public AnasayfaViewModel() {
+    @Inject
+    public AnasayfaViewModel(GorevlerDaoRepository grepo) {
+        this.grepo = grepo;
         gorevleriYukle();
         gorevlerListesi = grepo.gorevlerListesi;
-
     }
 
     public void gorevleriYukle() {

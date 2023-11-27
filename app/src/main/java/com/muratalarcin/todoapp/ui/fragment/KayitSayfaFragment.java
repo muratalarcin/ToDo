@@ -12,6 +12,9 @@ import com.muratalarcin.todoapp.R;
 import com.muratalarcin.todoapp.databinding.FragmentKayitSayfaBinding;
 import com.muratalarcin.todoapp.ui.viewmodel.KayitSayfaViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class KayitSayfaFragment extends Fragment {
     private FragmentKayitSayfaBinding binding;
     private KayitSayfaViewModel viewModel;

@@ -15,7 +15,10 @@ import com.muratalarcin.todoapp.data.entity.Gorevler;
 import com.muratalarcin.todoapp.databinding.FragmentDetaySayfaBinding;
 import com.muratalarcin.todoapp.ui.viewmodel.DetaySayfaViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
 
+
+@AndroidEntryPoint
 public class DetaySayfaFragment extends Fragment {
     private FragmentDetaySayfaBinding binding;
     private DetaySayfaViewModel viewModel;

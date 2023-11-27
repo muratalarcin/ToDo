@@ -18,6 +18,9 @@ import com.muratalarcin.todoapp.databinding.FragmentAnasayfaBinding;
 import com.muratalarcin.todoapp.ui.adapter.GorevlerAdapter;
 import com.muratalarcin.todoapp.ui.viewmodel.AnasayfaViewModel;
 
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
 public class AnasayfaFragment extends Fragment {
     private FragmentAnasayfaBinding binding;
     private AnasayfaViewModel viewModel;
