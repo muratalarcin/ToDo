@@ -24,4 +24,8 @@ public class GorevlerDaoRepository {
     public void guncelle(int gorevId, String gorevBaslik, String gorevDetay) {
         Log.e("güncelleme şekli", gorevBaslik);
     }
+
+    public void kaydet(String gorevBaslik, String gorevDetay) {
+        Log.e("Kaydet", gorevBaslik);
+    }
 }

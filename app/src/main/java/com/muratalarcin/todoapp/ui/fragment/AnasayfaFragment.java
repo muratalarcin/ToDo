@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -31,6 +32,10 @@ public class AnasayfaFragment extends Fragment {
             binding.rvGorevler.setAdapter(adapter);
         });
 
+        binding.fabButton.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.kayit_gecis);
+        });
+
 
         return binding.getRoot();
     }
@@ -39,5 +44,11 @@ public class AnasayfaFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = new ViewModelProvider(this).get(AnasayfaViewModel.class);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        viewModel.gorevleriYukle();
     }
 }
