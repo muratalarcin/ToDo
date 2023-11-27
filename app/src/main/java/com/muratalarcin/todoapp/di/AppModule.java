@@ -29,8 +29,8 @@ public class AppModule {
     @Provides
     @Singleton
     public GorevlerDao provideGorevlerDao(@ApplicationContext Context context) {
-        Veritabani vt = Room.databaseBuilder(context, Veritabani.class, "notlar.sqlite")
-                .createFromAsset("notlar.sqlite").build();
+        Veritabani vt = Room.databaseBuilder(context, Veritabani.class, "notlardb.sqlite")
+                .createFromAsset("notlardb.sqlite").build();
         return  vt.getGorevlerDao();
     }
 

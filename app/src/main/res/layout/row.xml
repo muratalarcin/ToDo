@@ -22,10 +22,9 @@
             android:layout_marginTop="8dp"
             android:maxLines="1"
             android:padding="8dp"
-            android:maxLength="25"
             android:singleLine="true"
             android:text="İlk Görevim"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -41,10 +40,11 @@
             android:id="@+id/twGorev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:gravity="start"
             android:maxLines="1"
             android:padding="8dp"
+            android:layout_marginBottom="8dp"
             android:singleLine="true"
             android:text="Sabah kalk, bankaya gir, para çek. Borçlerını öde. Çık markete git alışveriş yap." />
 
