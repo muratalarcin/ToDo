@@ -27,8 +27,8 @@ public class KayitSayfaFragment extends Fragment {
         binding = FragmentKayitSayfaBinding.inflate(inflater, container, false);
 
         binding.buttonKaydet.setOnClickListener(view -> {
-            String gorev_baslik = binding.editTextBaslik.getText().toString();
-            String gorev_detay = binding.editTextDetay.getText().toString();
+            String gorev_baslik = binding.kayitBaslik.getText().toString();
+            String gorev_detay = binding.kayitGorev.getText().toString();
             viewModel.kaydet(gorev_baslik, gorev_detay);
         });
 
